@@ -1,3 +1,9 @@
+/* Client Manager
+* user.js - manages client's user settings 
+* deriver.js - attaches some derived data on client startup
+* debug.js - Debugger
+* activate.js - manages manager 
+*/
 const chalk = require('chalk')
 const log = console.log
 
@@ -61,3 +67,4 @@ module.exports.derive = async (client) => {
 	  return client;
 
 }
+
