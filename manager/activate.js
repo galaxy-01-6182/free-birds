@@ -7,27 +7,26 @@ module.exports.run = (client) => {
 	
 const eventPath = './manager/events'
 
-const eventFolders =    fs.readdirSync(eventPath)
+const eventFolders = fs.readdirSync(eventPath)
 
 for (const folder of eventFolders) { 
 
-
-   let eventFiles = fs.readdirSync(`${eventPath}/${folder}`).filter(file => file.endsWith('-event.js'))
+ let eventFiles = fs.readdirSync(`${eventPath}/${folder}`).filter(file => file.endsWith('-event.js'))
 
  for(const eventFile of eventFiles){
 
-	const event = require(`./events/${folder}/${eventFile}`);
+   const event = require(`./events/${folder}/${eventFile}`);
 	
-	  	if (event.once) { 	
+      if (event.once) { 	
 	  	
-	  		client.once(event.name, (...args) => event.execute(client, ...args)); 
+	  client.once(event.name, (...args) => event.execute(client, ...args)); 
 	  		
-	  			} else { 	
+        } else { 	
 	  			
-	  				client.on(event.name, (...args) => event.execute(client, ...args)); 	
+ 		  client.on(event.name, (...args) => event.execute(client, ...args)); 	
 	  					  				
-	     	}
+	      }
 	   }
-	 }
- 
- }
+	 } 
+    
+   }
