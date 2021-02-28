@@ -3,6 +3,7 @@
 * deriver.js - attaches some derived data on client startup
 * debug.js - Debugger
 * activate.js - manages manager 
+* for more info read info.md on this folder
 */
 const chalk = require('chalk')
 const log = console.log
