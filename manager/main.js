@@ -2,7 +2,7 @@
 * user.js - manages client's user settings 
 * deriver.js - attaches some derived data on client startup
 * debug.js - Debugger
-* activate.js - manages manager 
+* activate.js - manages events
 * for more info read info.md on this folder
 */
 const chalk = require('chalk')
